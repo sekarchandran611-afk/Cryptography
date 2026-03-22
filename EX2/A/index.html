@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>S-DES Encryption</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+        }
+        pre {
+            background: #000;
+            color: #00ff00;
+            padding: 10px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Simplified DES (S-DES)</h2>
+
+    <form method="POST">
+        <label>Enter Plaintext (8-bit):</label>
+        <input type="text" name="plaintext" required>
+
+        <label>Enter Key (10-bit):</label>
+        <input type="text" name="key" required>
+
+        <button type="submit">Encrypt</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if cipher %}
+        <h3>Encrypted Output:</h3>
+        <p><b>{{ cipher }}</b></p>
+    {% endif %}
+
+    {% if steps %}
+        <h3>Intermediate Steps:</h3>
+        <pre>
+{% for step in steps %}
+{{ step }}
+{% endfor %}
+        </pre>
+    {% endif %}
+</div>
+
+</body>
+</html>
