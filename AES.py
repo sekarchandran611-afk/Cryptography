@@ -1,6 +1,3 @@
-# =========================
-# PERMUTATION TABLES
-# =========================
 P10 = [3,5,2,7,4,10,1,9,8,6]
 P8  = [6,3,7,4,8,5,10,9]
 IP  = [2,6,3,1,4,8,5,7]
@@ -18,9 +15,6 @@ S1 = [[0,1,2,3],
       [3,0,1,0],
       [2,1,0,3]]
 
-# =========================
-# HELPER FUNCTIONS
-# =========================
 def permute(bits, table):
     return "".join(bits[i-1] for i in table)
 
@@ -30,10 +24,6 @@ def shift(bits, n):
 def xor(a, b):
     return "".join('0' if a[i]==b[i] else '1' for i in range(len(a)))
 
-
-# =========================
-# ENCRYPTION
-# =========================
 def encrypt(plain, key):
 
     print("\n===== KEY GENERATION =====")
@@ -132,10 +122,6 @@ def encrypt(plain, key):
 
     return cipher
 
-
-# =========================
-# MAIN PROGRAM
-# =========================
 while True:
     print("\n===== S-DES MENU =====")
     print("1. Encrypt")
