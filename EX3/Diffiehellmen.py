@@ -37,7 +37,7 @@ try:
     print("\n========== RESULT ==========")
     if key_alice == key_bob:
         print(f"Shared Key = {key_alice}")
-        print("Both keys are equal. Secure communication established.")
+        print("Both keys are equal.")
     else:
         print("Error: Keys are not equal!")
 
